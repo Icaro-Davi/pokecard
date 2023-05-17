@@ -1,0 +1,30 @@
+@import './skeleton.scss';
+@import './themes.scss';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-flow: column;
+  background-color: map-get($themes, 'black-light');
+
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,31 @@
+@import "../../../../style/spacing.scss";
+@import "../../../../style/themes.scss";
+
+.search {
+    position: relative;
+
+    ul {
+        position: absolute;
+        width: 100%;
+    }
+
+    input {
+        height: 35px;
+        width: 100%;
+        background-color: map-get($themes, "secondary");
+        font-weight: 500;
+        font-size: 1.1rem;
+        outline: none;
+        border: 3px solid map-get($themes, "primary");
+        border-radius: 5px;
+        padding: map-get($spacing, "sm");
+    }
+
+    input:has(+ ul li:focus),
+    input:focus:has(+ ul li) {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: 0;
+        padding-bottom: calc(3px + map-get($spacing, "sm"));
+    }
+}

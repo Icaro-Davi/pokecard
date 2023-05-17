@@ -1,0 +1,38 @@
+@import "../../../style/spacing.scss";
+@import "../../../style/themes.scss";
+
+@mixin border-light {
+    box-shadow: 0 0 1px 1px map-get($themes, "secondary"), 0 0 4px 1px map-get($themes, "secondary"),
+        0 0 10px 1px map-get($themes, "secondary"), 0 0 4px 2px map-get($themes, "primary"),
+        0 0 10px 2px map-get($themes, "primary"), 0 0 15px 2px map-get($themes, "primary"),
+        inset 0 0 1px 1px map-get($themes, "secondary"), inset 0 0 8px 2px map-get($themes, "secondary"),
+        inset 0 0 12px 2px map-get($themes, "secondary"), inset 0 0 8px 1px map-get($themes, "primary");
+}
+
+.poke-button {
+    background-color: map-get($themes, "secondary");
+    padding: map-get($spacing, "sm");
+    outline: none;
+    border: 3px solid map-get($themes, "secondary");
+    border-radius: 5px;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    &:not(:disabled):hover {
+        animation: button-light 100ms ease-in;
+        @include border-light;
+    }
+}
+
+@keyframes button-light {
+    0% {
+        box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent, 0 0 0 0 transparent, 0 0 0 0 transparent,
+            0 0 0 0 transparent, 0 0 0 0 transparent, inset 0 0 0 0 transparent, inset 0 0 0 0 transparent,
+            inset 0 0 0 0 transparent, inset 0 0 0 0 transparent;
+    }
+    100% {
+        @include border-light;
+    }
+}

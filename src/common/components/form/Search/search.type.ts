@@ -1,0 +1,1 @@
+export type SearchInputItem = { key: string; value: string };

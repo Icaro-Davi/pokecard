@@ -1,0 +1,51 @@
+@import "../../../../../style/spacing.scss";
+@import "../../../../../style/themes.scss";
+
+$border-size: 3px;
+
+.main-navbar {
+    display: flex;
+    align-items: center;
+    border-bottom: $border-size solid map-get($themes, "secondary");
+    box-shadow: 0 0 4px 1px map-get($themes, "secondary"), 0 0 4px 2px map-get($themes, "primary"),
+        0 0 8px 2px map-get($themes, "primary");
+    background-color: map-get($themes, "black-dark");
+
+    .main-navbar-logo {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        margin: map-get($spacing, "lg");
+        background-color: map-get($themes, "secondary");
+        border: $border-size solid map-get($themes, "primary");
+        border-radius: 100%;
+
+        img {
+            padding: map-get($spacing, "sm");
+        }
+    }
+
+    ul {
+        display: flex;
+
+        li.main-navbar-active-route a {
+            border: $border-size solid map-get($themes, "secondary");
+            box-shadow: 0 0 2px 1px map-get($themes, "secondary"), 0 0 3px 2px map-get($themes, "primary"),
+                0 0 8px 2px map-get($themes, "primary"), inset 0 0 8px -1px map-get($themes, "primary"),
+                0 0 17px 2px map-get($themes, "primary");
+        }
+
+        li a {
+            font-weight: bold;
+            color: #000000;
+            text-align: center;
+            margin-right: map-get($spacing, "lg");
+            background-color: map-get($themes, "secondary");
+            border: $border-size solid map-get($themes, "primary");
+            padding: map-get($spacing, "sm");
+            min-width: 100px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+    }
+}

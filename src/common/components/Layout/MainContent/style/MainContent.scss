@@ -1,0 +1,9 @@
+@import '../../../../style/spacing.scss';
+
+.main-content {
+    width: 100%;
+    height: 100%;
+    padding: map-get($spacing, "md");
+    display: flex;
+    flex-flow: column;
+}

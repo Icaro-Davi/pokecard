@@ -1,0 +1,18 @@
+@import "../../../../style/spacing.scss";
+
+.footer {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: map-get($spacing, "md");
+    padding-top: 0;
+
+    h4 {
+        font-size: .9rem;
+        a{
+            color: #5a71e3;
+            font-size: 1.1rem;
+            text-decoration: underline;
+        }
+    }
+}

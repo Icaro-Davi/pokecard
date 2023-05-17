@@ -1,0 +1,80 @@
+@import "../../../common/style/spacing.scss";
+
+$pokemonColorPallet0: var(--pokemon-color-pallet-0);
+$pokemonColorPallet1: var(--pokemon-color-pallet-1);
+$pokemonColorPallet2: var(--pokemon-color-pallet-2);
+$pokemonColorPallet3: var(--pokemon-color-pallet-3);
+$pokemonColorPallet4: var(--pokemon-color-pallet-4);
+
+$image-border-spacing: 1px;
+
+@mixin opacity-background {
+    padding: map-get($spacing, "sm");
+    border: 1px dashed $pokemonColorPallet4;
+    border-radius: 3px;
+    background-color: #0000004f;
+}
+
+.pokecard {
+    background-color: $pokemonColorPallet1;
+    color: #FFFFFF;
+    text-align: justify;
+    width: 310px;
+    aspect-ratio: 8/12;
+    border: map-get($spacing, "md") solid #ffffff;
+    padding: map-get($spacing, "md");
+    border-radius: map-get($spacing, "lg");
+    display: flex;
+    flex-flow: column;
+
+    box-shadow: 0px 0px 4px 1px #ffffff, 0 0 6px 2px #ffffff, 0 0 9px 8px $pokemonColorPallet0, 0 0 27px 10px $pokemonColorPallet0, 0 0 45px 12px $pokemonColorPallet0,
+        inset 0 0 31px 2px $pokemonColorPallet0;
+
+    .pokecard-sprite {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        height: 200px;
+        img {
+            object-fit: contain;
+            filter:
+                drop-shadow(1px 0 0 $pokemonColorPallet0)
+                drop-shadow(-1px 0 0 $pokemonColorPallet0)
+                drop-shadow(-1px 0 $pokemonColorPallet0)
+                drop-shadow(0 1px 0 $pokemonColorPallet0)
+                drop-shadow(0px 0px 3px $pokemonColorPallet0)
+                drop-shadow(0px 0px 7px $pokemonColorPallet0)
+                drop-shadow(0px 0px 9px $pokemonColorPallet0);
+        }
+    }
+
+    h2,
+    h4 p {
+        z-index: 5;
+    }
+
+    .pokecard-title {
+        @include opacity-background;
+    }
+
+    .pokecard-type {
+        margin-bottom: map-get($spacing, "md");
+        @include opacity-background;
+    }
+
+    .pokecard-description {
+        flex: 1;
+        margin-bottom: map-get($spacing, "md");
+        @include opacity-background;
+    }
+
+    .pokecard-info {
+        font-size: small;
+
+        .pokecard-tag {
+            @include opacity-background;
+            padding: map-get($spacing, "xs");
+            margin-right: map-get($spacing, "sm");
+        }
+    }
+}

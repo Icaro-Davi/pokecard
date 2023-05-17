@@ -1,0 +1,25 @@
+@import "../../../../../common/style/spacing.scss";
+
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    form {
+        min-width: 300px;
+        max-width: 500px;
+        width: 100%;
+
+        display: flex;
+        flex-flow: column;
+        row-gap: map-get($spacing, "md");
+        flex-shrink: 0;
+
+        button[type="submit"] {
+            margin: auto;
+            min-width: 200px;
+            max-width: 300px;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+@import "../../../../../../common/style/spacing.scss";
+@import "../../../../../../common/style/themes.scss";
+
+.pokecard-skeleton {
+    width: 310px;
+    aspect-ratio: 8/12;
+    padding: map-get($spacing, "md");
+    row-gap: map-get($spacing, "md");
+
+    border-radius: 5px;
+
+    .title,
+    .type {
+        height: 35px;
+    }
+
+    .image {
+        height: 200px;
+    }
+
+    .description {
+        flex: 1;
+    }
+
+    .info {
+        position: relative;
+        height: 25px;
+        background-color: map-get($themes, "skeleton-bg");
+        display: flex;
+        column-gap: map-get($spacing, "md");
+        box-shadow: 0 0 transparent;
+        &::before,
+        &::after {
+            content: "";
+            width: 70px;
+            background-color: map-get($themes, "skeleton-item");
+            box-shadow: 1px 1px 5px #0000001f;
+        }
+    }
+}
