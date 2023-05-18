@@ -11,7 +11,13 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
         return {
             title: `${pokemon.name} | Pokecard`,
             description: pokemon.species.flavor_text_entries[0].flavor_text ?? `Pokemon ${pokemon.name} does not have a description.`,
-            keywords: ['pokecard', 'pokemon', 'cards', 'games', 'monsters', 'preview pokecard'],
+            keywords: ['pokecard', 'pokemon', 'cards', 'games', 'monsters', 'preview pokecard', pokemon.name],
+            ...pokemon.sprites.other["official-artwork"].front_default
+                ? {
+                    openGraph: {
+                        images: pokemon.sprites.other["official-artwork"].front_default
+                    }
+                } : {}
         }
     } catch (error) {
         return {

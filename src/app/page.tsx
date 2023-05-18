@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   title: 'Home | Pokecard',
   description: 'Search for your favorite Pokemon and view its card.',
   keywords: ['pokecard', 'pokemon', 'cards', 'games', 'monsters'],
+  openGraph: {
+    images: '/favicon.ico'
+  },
+  authors: [
+    { name: 'Icaro Davi', url: 'https://github.com/Icaro-Davi' }
+  ]
 }
 
 async function Home() {
@@ -26,7 +32,7 @@ async function Home() {
 
   return (
     <MainContent>
-      <div style={{ display: 'flex', justifyContent: 'center'  }}>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
         <PokemonLogo />
       </div>
       <SearchPokemon pokemons={pokemons} />
